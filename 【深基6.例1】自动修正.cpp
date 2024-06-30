@@ -1,3 +1,4 @@
+//方法1
 #include <iostream>  
 #include <cctype>  
 #include <string>  
@@ -20,4 +21,37 @@ int main() {
     cout << str << endl;  
   
     return 0;  
+}
+
+//方法2
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main(){
+	string a;
+	//char a;
+	cin >> a;
+	//cout << int(a);
+	//size_t len = a.length();
+	//cout << len;
+	size_t len = a.length();
+	char b[len];
+	for(int i = 0; i < len; i++) {
+//		if (97 <= int(a[i]) && int(a[i]) <= 122) {
+//			
+//		}
+		if ('A'<=a[i] && a[i]<='Z') {
+			cout << a[i];
+		}
+		else if ('a'<=a[i] && a[i]<='z') {
+			//cout << int(a[i])<<endl;
+			b[i] = static_cast<char>(int(a[i])-32);	
+			cout << b[i];
+		}
+		else{
+			cout << a[i];
+		}
+	} 
 }
